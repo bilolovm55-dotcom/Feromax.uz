@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Феромакс — Ўзбекистонда профессионал металл стеллажлар ишлаб чиқариш. Омбор ва савдо стеллажлари. 48 соатда етказиб бериш. Бепул монтаж." />
+  <meta name="keywords" content="стеллаж, омбор стеллажи, металл стеллаж, stellaj, ombor, Feromax, Феромакс" />
+  <title>Феромакс — Профессионал Металл Стеллажлар</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --dark: #0d1b2a;
+      --dark2: #152238;
+      --dark3: #1a2d47;
+      --accent: #2a7fd4;
+      --accent2: #5ba3e8;
+      --white: #ffffff;
+      --gray: rgba(255,255,255,0.6);
+    }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--dark); color: var(--white); }
+    a { text-decoration: none; color: inherit; }
+
+    /* TOPBAR */
+    .topbar { background: var(--dark2); padding: 8px 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 12px; color: var(--gray); flex-wrap: wrap; gap: 8px; }
+    .topbar-left { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+    .topbar-right { display: flex; gap: 1.5rem; }
+    .topbar-right a { color: var(--accent2); font-size: 12px; }
+
+    /* NAV */
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: var(--dark); border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 100; flex-wrap: wrap; gap: 12px; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-icon { width: 36px; height: 36px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #fff; }
+    .logo-text { font-size: 18px; font-weight: 700; letter-spacing: 2px; color: #fff; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+    .nav-links a { font-size: 13px; color: var(--gray); letter-spacing: 0.3px; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent2); }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .lang-wrap { display: flex; gap: 4px; }
+    .lang { font-size: 12px; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.2); border-radius: 3px; cursor: pointer; color: var(--gray); background: transparent; }
+    .lang.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .nav-btn { padding: 9px 22px; background: var(--accent); color: #fff; border: none; border-radius: 4px; font-size: 13px; font-weight: 600; cursor: pointer; letter-spacing: 0.5px; transition: background 0.2s; }
+    .nav-btn:hover { background: #1a6ab8; }
+
+    /* HERO */
+    .hero { position: relative; min-height: 500px; background: linear-gradient(rgba(13,27,42,0.8), rgba(13,27,42,0.92)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1400&q=80') center/cover no-repeat; display: flex; align-items: center; padding: 5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .hero-content { max-width: 620px; }
+    .hero-tag { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent2); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
+    .hero-tag::before { content: ''; width: 30px; height: 1px; background: var(--accent2); display: inline-block; }
+    .hero h1 { font-size: 40px; font-weight: 700; line-height: 1.15; color: #fff; margin-bottom: 1.25rem; }
+    .hero-sub { font-size: 15px; color: var(--gray); line-height: 1.7; margin-bottom: 2rem; max-width: 500px; }
+    .hero-checks { display: flex; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .hero-check { display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,0.85); }
+    .hero-check::before { content: '✓'; color: var(--accent2); font-weight: 700; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-blue { padding: 13px 28px; background: var(--accent); color: #fff; border: none; border-radius: 4px; font-size: 13px; font-weight: 600; cursor: pointer; letter-spacing: 0.3px; transition: background 0.2s; }
+    .btn-blue:hover { background: #1a6ab8; }
+    .btn-outline { padding: 13px 28px; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; font-size: 13px; cursor: pointer; transition: border-color 0.2s; }
+    .btn-outline:hover { border-color: #fff; }
+
+    /* STATS */
+    .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--dark2); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .stat { padding: 1.5rem 2rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
+    .stat:last-child { border-right: none; }
+    .stat-num { font-size: 28px; font-weight: 700; color: var(--accent2); }
+    .stat-lbl { font-size: 12px; color: var(--gray); margin-top: 4px; }
+
+    /* SECTIONS */
+    .section { padding: 4rem 2rem; background: var(--dark); }
+    .section.alt { background: var(--dark2); }
+    .sec-tag { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent2); margin-bottom: 10px; }
+    .sec-title { font-size: 28px; font-weight: 700; margin-bottom: 2.5rem; color: #fff; }
+
+    /* PRODUCTS */
+    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; overflow: hidden; }
+    .prod-item { background: var(--dark); overflow: hidden; transition: background 0.2s; }
+    .prod-item:hover { background: var(--dark3); }
+    .prod-img { height: 200px; overflow: hidden; position: relative; }
+    .prod-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .prod-item:hover .prod-img img { transform: scale(1.05); }
+    .prod-overlay { position: absolute; inset: 0; background: rgba(42,127,212,0.7); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.2s; }
+    .prod-item:hover .prod-overlay { opacity: 1; }
+    .prod-overlay span { color: #fff; font-size: 13px; letter-spacing: 1px; border: 1px solid #fff; padding: 8px 20px; border-radius: 3px; }
+    .prod-info { padding: 1.5rem; }
+    .prod-tag { font-size: 10px; letter-spacing: 2px; color: var(--accent2); margin-bottom: 8px; text-transform: uppercase; }
+    .prod-name { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #fff; }
+    .prod-line { width: 32px; height: 2px; background: var(--accent); margin-bottom: 12px; }
+    .prod-desc { font-size: 13px; color: var(--gray); line-height: 1.6; margin-bottom: 1rem; }
+    .prod-specs { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .prod-spec { font-size: 12px; color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 4px; }
+    .prod-spec::before { content: '◆'; font-size: 8px; color: var(--accent2); }
+
+    /* SHOWCASE */
+    .showcase { display: grid; grid-template-columns: 1fr 1fr; background: var(--dark2); }
+    .showcase-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.08); }
+    .showcase-img { height: 200px; overflow: hidden; background: var(--dark3); position: relative; }
+    .showcase-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .showcase-img:hover img { transform: scale(1.05); }
+    .showcase-img-lbl { position: absolute; bottom: 0; left: 0; right: 0; padding: 10px 14px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); font-size: 12px; color: rgba(255,255,255,0.9); letter-spacing: 0.5px; }
+    .showcase-text { padding: 3rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+    .showcase-text h2 { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 1.5rem; line-height: 1.2; }
+    .showcase-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .showcase-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--gray); line-height: 1.5; }
+    .showcase-list li::before { content: '✓'; color: var(--accent2); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .showcase-list li strong { color: #fff; }
+    .showcase-btn { margin-top: 2rem; align-self: flex-start; padding: 12px 28px; background: var(--accent); color: #fff; border: none; border-radius: 4px; font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .showcase-btn:hover { background: #1a6ab8; }
+
+    /* WHY */
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border-radius: 8px; overflow: hidden; }
+    .why-item { background: var(--dark); padding: 2rem 1.5rem; text-align: center; transition: background 0.2s; }
+    .why-item:hover { background: var(--dark3); }
+    .why-icon { width: 54px; height: 54px; background: rgba(42,127,212,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 24px; }
+    .why-item h4 { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+    .why-item p { font-size: 12px; color: var(--gray); line-height: 1.6; }
+
+    /* PROCESS */
+    .process-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border-radius: 8px; overflow: hidden; }
+    .proc { background: var(--dark2); padding: 2rem 1.5rem; }
+    .proc-n { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent2); margin-bottom: 1rem; }
+    .proc-num { width: 40px; height: 40px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .proc h4 { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+    .proc p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+    /* CTA */
+    .cta { background: var(--accent); padding: 4rem 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .cta h2 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .cta p { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.7; }
+    .cta-form { display: flex; flex-direction: column; gap: 12px; }
+    .cta-input { padding: 13px 18px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; font-size: 13px; color: #fff; outline: none; }
+    .cta-input::placeholder { color: rgba(255,255,255,0.5); }
+    .cta-submit { padding: 14px; background: #fff; color: var(--accent); border: none; border-radius: 4px; font-size: 14px; font-weight: 700; cursor: pointer; letter-spacing: 0.5px; transition: background 0.2s; }
+    .cta-submit:hover { background: #f0f0f0; }
+
+    /* FOOTER */
+    .footer { background: var(--dark2); padding: 3rem 2rem; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    .foot-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+    .foot-logo-icon { width: 32px; height: 32px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #fff; }
+    .foot-logo-text { font-size: 16px; font-weight: 700; letter-spacing: 2px; color: #fff; }
+    .foot-desc { font-size: 12px; color: var(--gray); line-height: 1.7; margin-bottom: 1.5rem; }
+    .foot-socials { display: flex; gap: 8px; }
+    .foot-social { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 16px; transition: border-color 0.2s; }
+    .foot-social:hover { border-color: var(--accent2); }
+    .foot-col-title { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); margin-bottom: 1rem; }
+    .foot-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .foot-links a { font-size: 13px; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .foot-links a:hover { color: #fff; }
+    .foot-bottom { background: rgba(0,0,0,0.3); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; gap: 8px; }
+    .foot-bottom p { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.5px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .products-grid { grid-template-columns: 1fr; }
+      .showcase { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-row { grid-template-columns: repeat(2, 1fr); }
+      .cta { grid-template-columns: 1fr; }
+      .footer { grid-template-columns: 1fr 1fr; }
+      .hero h1 { font-size: 28px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span>📍 Андижон вилояти, Ўзбекистон</span>
+    <span>✉ feromax@mail.uz</span>
+    <span>📞 +998 33 012 00 05</span>
+  </div>
+  <div class="topbar-right">
+    <a href="https://t.me/ferrox_uz">Telegram</a>
+    <a href="https://instagram.com/ferrox.uz">Instagram</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="logo">
+    <div class="logo-icon">Ф</div>
+    <div class="logo-text">ФЕРОМАКС</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#" class="active">БОШ САҲИФА</a></li>
+    <li><a href="#mahsulotlar">МАҲСУЛОТЛАР</a></li>
+    <li><a href="#afzalliklar">АФЗАЛЛИКЛАР</a></li>
+    <li><a href="#jarayon">ЖАРАЁН</a></li>
+    <li><a href="#kontakt">КОНТАКТ</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-wrap">
+      <span class="lang active">ЎЗ</span>
+      <span class="lang">RU</span>
+    </div>
+    <button class="nav-btn" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">НАРХ СЎРАШ</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Металл конструкциялар · Ўзбекистон</div>
+    <h1>Омборингиз учун профессионал стеллажлар сотиб олинг</h1>
+    <p class="hero-sub">Феромакс — мустаҳкам металл конструкциялар. Ўзимиз ишлаб чиқарамиз — воситачиларсиз. 48 соатда етказиб берамиз.</p>
+    <div class="hero-checks">
+      <div class="hero-check">Индивидуал ёндашув</div>
+      <div class="hero-check">Қулай нарх</div>
+      <div class="hero-check">Юқори сифат</div>
+      <div class="hero-check">Бепул монтаж</div>
+    </div>
+    <div class="hero-btns">
+      <button class="btn-blue" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">СТЕЛЛАЖ СОТИБ ОЛИШ →</button>
+      <button class="btn-outline" onclick="document.getElementById('mahsulotlar').scrollIntoView({behavior:'smooth'})">МАҲСУЛОТЛАР</button>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">500+</div><div class="stat-lbl">Бажарилган лойиҳа</div></div>
+  <div class="stat"><div class="stat-num">4 тонна</div><div class="stat-lbl">Юк кўтариш қобилияти</div></div>
+  <div class="stat"><div class="stat-num">48 соат</div><div class="stat-lbl">Етказиб бериш муддати</div></div>
+  <div class="stat"><div class="stat-num">5 йил</div><div class="stat-lbl">Кафолат</div></div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="section" id="mahsulotlar">
+  <div class="sec-tag">Маҳсулотлар</div>
+  <div class="sec-title">Омбор стеллажлари</div>
+  <div class="products-grid">
+    <div class="prod-item">
+      <div class="prod-img">
+        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=80" alt="Мега стеллаж" />
+        <div class="prod-overlay"><span>БАТАФСИЛ</span></div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-tag">01 / МЕГА</div>
+        <div class="prod-name">Мега стеллаж</div>
+        <div class="prod-line"></div>
+        <div class="prod-desc">Катта саноат омборлари учун. Оғир юкларга бардош берувчи кучли конструкция. Лего тизими — тез йиғилади.</div>
+        <div class="prod-specs">
+          <div class="prod-spec">4 тоннагача</div>
+          <div class="prod-spec">2м — 6м</div>
+          <div class="prod-spec">Бепул монтаж</div>
+        </div>
+      </div>
+    </div>
+    <div class="prod-item">
+      <div class="prod-img">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Стандарт стеллаж" />
+        <div class="prod-overlay"><span>БАТАФСИЛ</span></div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-tag">02 / СТАНДАРТ</div>
+        <div class="prod-name">Стандарт стеллаж</div>
+        <div class="prod-line"></div>
+        <div class="prod-desc">До'кон ва кичик омборлар учун универсал ечим. Ҳар бир полкаси 100 кгдан юк кўтаради.</div>
+        <div class="prod-specs">
+          <div class="prod-spec">100 кг/полка</div>
+          <div class="prod-spec">2м — 4м</div>
+          <div class="prod-spec">Исталган ранг</div>
+        </div>
+      </div>
+    </div>
+    <div class="prod-item">
+      <div class="prod-img">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="Мини стеллаж" />
+        <div class="prod-overlay"><span>БАТАФСИЛ</span></div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-tag">03 / МИНИ</div>
+        <div class="prod-name">Мини стеллаж</div>
+        <div class="prod-line"></div>
+        <div class="prod-desc">Гараж, подвал ва кичик до'конлар учун. Енгил ва қулай нархда. Ўзингиз ўрната оласиз.</div>
+        <div class="prod-specs">
+          <div class="prod-spec">50 кг/полка</div>
+          <div class="prod-spec">1м — 2м</div>
+          <div class="prod-spec">Осон монтаж</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<div class="showcase">
+  <div class="showcase-imgs">
+    <div class="showcase-img">
+      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80" alt="Паллет стеллаж" />
+      <div class="showcase-img-lbl">Паллет стеллажлар</div>
+    </div>
+    <div class="showcase-img">
+      <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&q=80" alt="Мезонин стеллаж" />
+      <div class="showcase-img-lbl">Мезонин стеллажлар</div>
+    </div>
+    <div class="showcase-img">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Омбор стеллаж" />
+      <div class="showcase-img-lbl">Омбор стеллажлар</div>
+    </div>
+    <div class="showcase-img">
+      <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&q=80" alt="Консол стеллаж" />
+      <div class="showcase-img-lbl">Консол стеллажлар</div>
+    </div>
+  </div>
+  <div class="showcase-text">
+    <div class="sec-tag">Нима учун Феромакс?</div>
+    <h2>Биз билан омборингиз янада тартибли бўлади</h2>
+    <ul class="showcase-list">
+      <li><span><strong>Тажриба:</strong> 5+ йил бозорда</span></li>
+      <li><span><strong>Юк:</strong> 150 дан 4000 кггача</span></li>
+      <li><span><strong>Ассортимент:</strong> Полкали, паллет, консол стеллажлар</span></li>
+      <li><span><strong>Хизмат:</strong> Лойиҳадан монтажгача</span></li>
+      <li><span><strong>Кафолат:</strong> 5 йилгача</span></li>
+      <li><span><strong>Нарх:</strong> Тўғридан-тўғри заводдан</span></li>
+    </ul>
+    <button class="showcase-btn" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">БАТАФСИЛ →</button>
+  </div>
+</div>
+
+<!-- WHY -->
+<section class="section alt" id="afzalliklar">
+  <div class="sec-tag">Афзалликлар</div>
+  <div class="sec-title">Нима учун Феромакс танланади?</div>
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-icon">🏭</div>
+      <h4>Ўз ишлаб чиқариш</h4>
+      <p>Воситачиларсиз — заводдан тўғри сизга. Энг қулай нархда оласиз.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">🚚</div>
+      <h4>48 соатда етказиш</h4>
+      <p>Рақобатчилар 2-4 ҳафта кутгизар, биз 48 соатда етказамиз.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">🛡️</div>
+      <h4>5 йил кафолат</h4>
+      <p>Ҳар бир маҳсулотга расмий кафолат ва сертификат берамиз.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-icon">📐</div>
+      <h4>Индивидуал ўлчам</h4>
+      <p>Ҳар қандай ўлчамда буюртма асосида тайёрлаб берамиз.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="jarayon">
+  <div class="sec-tag">Жараён</div>
+  <div class="sec-title">Қандай ишлайди?</div>
+  <div class="process-row">
+    <div class="proc">
+      <div class="proc-n">ҚАДАМ 01</div>
+      <div class="proc-num">1</div>
+      <h4>Ариза беринг</h4>
+      <p>Телефон ёки сайт орқали сўров юборинг</p>
+    </div>
+    <div class="proc">
+      <div class="proc-n">ҚАДАМ 02</div>
+      <div class="proc-num">2</div>
+      <h4>Ҳисоб-китоб</h4>
+      <p>30 дақиқада нарх ва ўлчамни тасдиқлаймиз</p>
+    </div>
+    <div class="proc">
+      <div class="proc-n">ҚАДАМ 03</div>
+      <div class="proc-num">3</div>
+      <h4>Ишлаб чиқариш</h4>
+      <p>Заводда буюртмангиз тайёрланади</p>
+    </div>
+    <div class="proc">
+      <div class="proc-n">ҚАДАМ 04</div>
+      <div class="proc-num">4</div>
+      <h4>Етказиб бериш</h4>
+      <p>48 соатда монтаж билан бирга етказамиз</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="kontakt">
+  <div>
+    <h2>Бепул нарх ҳисоблаш</h2>
+    <p>Телефон рақамингизни қолдиринг — 30 дақиқа ичида мутахассисимиз қўнғироқ қилади ва нархни ҳисоблаб беради.</p>
+  </div>
+  <div class="cta-form">
+    <input class="cta-input" type="text" placeholder="Исмингиз" />
+    <input class="cta-input" type="tel" placeholder="+998 __ ___ __ __" />
+    <button class="cta-submit">ЮБОРИШ →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    <div class="foot-logo">
+      <div class="foot-logo-icon">Ф</div>
+      <div class="foot-logo-text">ФЕРОМАКС</div>
+    </div>
+    <p class="foot-desc">Профессионал металл конструкциялар. Ўзимиз ишлаб чиқарамиз — сиз учун энг яхши нархда.</p>
+    <div class="foot-socials">
+      <a class="foot-social" href="https://t.me/ferrox_uz" title="Telegram">✈</a>
+      <a class="foot-social" href="https://instagram.com/ferrox.uz" title="Instagram">📷</a>
+    </div>
+  </div>
+  <div>
+    <div class="foot-col-title">Саҳифалар</div>
+    <ul class="foot-links">
+      <li><a href="#">Бош саҳифа</a></li>
+      <li><a href="#mahsulotlar">Маҳсулотлар</a></li>
+      <li><a href="#afzalliklar">Афзалликлар</a></li>
+      <li><a href="#kontakt">Контакт</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="foot-col-title">Маҳсулотлар</div>
+    <ul class="foot-links">
+      <li><a href="#">Мега стеллаж</a></li>
+      <li><a href="#">Стандарт стеллаж</a></li>
+      <li><a href="#">Мини стеллаж</a></li>
+      <li><a href="#">Паллет стеллаж</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="foot-col-title">Боғланиш</div>
+    <ul class="foot-links">
+      <li><a href="tel:+998330120005">+998 33 012 00 05</a></li>
+      <li><a href="#">Андижон вилояти</a></li>
+      <li><a href="https://feromax.uz">feromax.uz</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="foot-bottom">
+  <p>© 2026 ФЕРОМАКС. БАРЧА ҲУҚУҚЛАР ҲИМОЯЛАНГАН.</p>
+  <p>ЎЗ · RU</p>
+</div>
+
+</body>
+</html>
